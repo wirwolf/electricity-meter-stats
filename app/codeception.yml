@@ -1,0 +1,25 @@
+actor: Tester
+coverage:
+  enabled: true
+  remote: false
+  include:
+          - src/*
+  exclude:
+          - src/*Test.php
+          - src/*Cest.php
+          - src/*pem
+          - src/Modules/Database/*
+paths:
+    tests: tests
+    log: tests/_output
+    data: tests/_data
+    helpers: tests/_support
+settings:
+    bootstrap: _bootstrap.php
+    memory_limit: 1024M
+    log: true
+    colors: true
+modules:
+    config:
+        Yii2:
+            configFile: 'config/tests/config.php'

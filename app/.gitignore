@@ -1,0 +1,26 @@
+
+
+# composer vendor dir
+/vendor
+
+
+web/assets/*
+!web/assets/.gitkeep
+
+# composer itself is not needed
+composer.phar
+
+# Mac DS_Store Files
+.DS_Store
+
+/.env
+
+
+composer.phar
+tests/_support/_generated/*
+src/Models/Mysql/*
+tests/_output/*
+
+
+storage/runtime/*/*
+!storage/runtime/*/.gitkeep

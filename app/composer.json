@@ -1,0 +1,81 @@
+{
+	"name": "yiisoft/yii2-app-basic",
+	"description": "Yii 2 Basic Project Template",
+	"keywords": [
+		"yii2",
+		"framework",
+		"basic",
+		"project template"
+	],
+	"homepage": "http://www.yiiframework.com/",
+	"type": "project",
+	"license": "BSD-3-Clause",
+	"minimum-stability": "stable",
+	"require": {
+		"php": ">=7.2.0",
+		"yiisoft/yii2": "2.0.15.1",
+		"yiisoft/yii2-swiftmailer": "2.0.7",
+		"yiisoft/yii2-debug": "2.0.14",
+		"yiisoft/yii2-gii": "2.0.8",
+		"yiisoft/yii2-httpclient": "2.*",
+		"vlucas/phpdotenv": "2.*",
+		"himiklab/yii2-recaptcha-widget": "1.0.*",
+		"yiisoft/yii2-redis": "^2.0",
+		"pahanini/yii2-consolelog": "^2.0",
+		"mito/yii2-sentry": "~1.0.0",
+		"lajax/yii2-translate-manager": "^1.7",
+		"boundstate/yii2-mailgun": "^0.0",
+		"someblackmagic/yii2-user": "dev-master",
+		"dmstr/yii2-adminlte-asset": "^2.1"
+	},
+	"require-dev": {
+		"codeception/base": "2.3.7",
+		"codeception/verify": "~0.3.1",
+		"codeception/specify": "~0.4.3",
+		"adgoal/aspect-mock": "2.1.*",
+		"yiisoft/yii2-faker": "2.0.3",
+		"phploc/phploc": "@stable",
+		"pdepend/pdepend": "@stable",
+		"phpmd/phpmd": "@stable",
+		"sebastian/phpcpd": "2.0.4",
+		"squizlabs/php_codesniffer": "@stable",
+		"elisdn/yii2-gii-fixture-generator": "^1.1",
+		"insolita/yii2-fixturegii": "~1.0.0"
+	},
+	"config": {
+		"process-timeout": 1800,
+		"fxp-asset": {
+			"enabled": false
+		}
+	},
+	"autoload": {
+		"psr-4": {
+			"App\\": "src/",
+			"tests\\": "tests/"
+		}
+	},
+	"extra": {
+		"yii\\composer\\Installer::postCreateProject": {
+			"setPermission": [
+				{
+					"runtime": "0777",
+					"web/assets": "0777",
+					"yii": "0755"
+				}
+			],
+			"generateCookieValidationKey": [
+				"config/web.php"
+			]
+		}
+	},
+	"repositories": [
+		{
+			"type": "vcs",
+			"url": "yii2-user"
+		},
+		{
+			"type": "composer",
+			"url": "https://asset-packagist.org"
+		}
+	]
+}

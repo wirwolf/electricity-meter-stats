@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="phpcs" basedir=".">
+    <property name="phpcs.ignore" value="src/Migrations,src/Modules/Database,src/Views"/>
+    <target name="run"
+            description="Find coding standard violations using PHP_CodeSniffer and print human readable output. Intended for usage on the command line before committing.">
+        <exec executable="${toolsDir}phpcs" failonerror="true" >
+            <arg value="--standard=${buildDir}phpcs/ruleset.xml" />
+            <arg value="-s" />
+            <arg value="--runtime-set"/>
+            <arg value="ignore_warnings_on_exit"/>
+            <arg value="1"/>
+            <arg value="--parallel=4"/>
+            <arg value="--extensions=php" />
+            <arg value="--ignore=${phpcs.ignore}" />
+            <arg path="${srcDir}" />
+        </exec>
+    </target>
+
+    <target name="report"
+            description="Find coding standard violations using PHP_CodeSniffer and print human readable output. Intended for usage on the command line before committing.">
+        <exec executable="${toolsDir}phpcs" failonerror="true">
+            <arg value="--report=gitblame" />
+            <arg value="--standard=${buildDir}phpcs/ruleset.xml" />
+            <arg value="--extensions=php" />
+            <arg value="--ignore=${phpcs.ignore}" />
+            <arg value="${srcDir}" />
+        </exec>
+    </target>
+
+    <target name="fix" description="">
+        <exec executable="${toolsDir}phpcbf">
+            <arg value="--report=checkstyle" />
+            <arg value="--report-file=${buildDir}/phpcs/report.xml" />
+            <arg value="--standard=${buildDir}/phpcs/ruleset.xml" />
+            <arg value="--ignore=${phpcs.ignore}" />
+            <arg path="${srcDir}" />
+        </exec>
+    </target>
+
+    <target name="run-ci"
+            description="Find coding standard violations using PHP_CodeSniffer and log result in XML format. Intended for usage within a continuous integration environment.">
+        <exec executable="${toolsDir}phpcs" failonerror="true" >
+            <arg value="--standard=${buildDir}phpcs/ruleset.xml" />
+            <arg value="-s" />
+            <arg value="--runtime-set"/>
+            <arg value="ignore_warnings_on_exit"/>
+            <arg value="1"/>
+            <arg value="--parallel=4"/>
+            <arg value="--warning-severity=0"/>
+            <arg value="--extensions=php" />
+            <arg value="--ignore=${phpcs.ignore}" />
+            <arg value="--report-xml=${buildDir}phpcs/data/report.xml" />
+            <arg value="--report-full" />
+            <arg path="${srcDir}" />
+        </exec>
+    </target>
+
+
+    <target name="report-source"
+            description="Find coding standard violations using PHP_CodeSniffer and print human readable output. Intended for usage on the command line before committing.">
+        <exec executable="${toolsDir}phpcs" failonerror="true">
+            <arg value="--report=source" />
+            <arg value="--standard=${buildDir}phpcs/ruleset.xml" />
+            <arg value="--extensions=php" />
+            <arg value="-s" />
+            <arg value="--ignore=${phpcs.ignore}" />
+            <arg value="${srcDir}" />
+        </exec>
+    </target>
+
+</project>

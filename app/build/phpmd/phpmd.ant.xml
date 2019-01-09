@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="phpmd" basedir=".">
+    <property name="phpmd.ignore" value="src/Migrations,src/Modules/Database,src/Views"/>
+
+    <target name="run"
+            description="Perform project mess detection using PHPMD and print human readable output. Intended for usage on the command line before committing.">
+        <exec executable="${toolsDir}phpmd" failonerror="true">
+            <arg path="${srcDir}" />
+            <arg value="text" />
+            <arg path="${buildDir}phpmd/ruleset.xml" />
+
+            <arg value="--exclude" />
+            <arg value="${phpmd.ignore}" />
+
+        </exec>
+    </target>
+    <!-- https://github.com/phpmd/phpmd/issues/535 -->
+    <target name="run-ci"
+            description="Perform project mess detection using PHPMD and print human readable output. Intended for usage on the command line before committing.">
+        <exec executable="${toolsDir}phpmd" failonerror="true">
+
+            <arg path="${srcDir}" />
+            <arg value="text" />
+            <arg path="${buildDir}phpmd/ruleset.xml" />
+
+            <arg value="--exclude" />
+            <arg value="${phpmd.ignore}" />
+
+            <arg value="--reportfile-xml" />
+            <arg value="${buildDir}phpmd/data/report.xml" />
+
+        </exec>
+    </target>
+</project>

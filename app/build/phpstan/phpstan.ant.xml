@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="phpstan" basedir=".">
+
+    <target name="run" description="PHP Static Analysis Tool - discover bugs in your code without running it">
+        <!--mkdir dir="${basedir}/build"/>
+        <get src="https://github.com/phpstan/phpstan/releases/download/0.9/phpstan.phar"
+             dest="${basedir}/build/phpstan.phar" skipexisting="true"/-->
+        <exec executable="${toolsDir}phpstan" searchpath="true" resolveexecutable="true" failonerror="true">
+            <arg value="analyse"/>
+            <arg value="-l"/>
+            <arg value="7"/>
+            <arg value="-c"/>
+            <arg path="${basedir}/build/phpstan/phpstan.neon"/>
+            <arg value="${basedir}/src"/>
+            <!--arg value="${basedir}/web"/-->
+            <!--arg value="${basedir}/tests"/-->
+            <arg value="--no-interaction"/>
+            <arg value="--no-progress"/>
+        </exec>
+    </target>
+
+    <target name="run-ci" description="PHP Static Analysis Tool - discover bugs in your code without running it">
+        <!--mkdir dir="${basedir}/build"/>
+        <get src="https://github.com/phpstan/phpstan/releases/download/0.9/phpstan.phar"
+             dest="${basedir}/build/phpstan.phar" skipexisting="true"/-->
+        <exec executable="${toolsDir}phpstan"
+              searchpath="true"
+              resolveexecutable="true"
+              output="${basedir}/build/phpstan/data/output.log"
+              resultproperty="phpstan.result"
+              failonerror="false"
+        >
+            <arg value="analyse"/>
+            <arg value="-l"/>
+            <arg value="7"/>
+            <arg value="-c"/>
+            <arg path="${basedir}/build/phpstan/phpstan.neon"/>
+            <arg value="${basedir}/src"/>
+            <arg value="${basedir}/web"/>
+            <!--arg value="${basedir}/tests"/-->
+            <arg value="--no-interaction"/>
+            <arg value="--no-progress"/>
+        </exec>
+        <fail message="ERROR: PHPStan. Output file:/build/phpstan/output.log">
+            <condition>
+                <not>
+                    <equals arg1="${phpstan.result}" arg2="0"/>
+                </not>
+            </condition>
+        </fail>
+    </target>
+</project>
