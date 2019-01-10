@@ -1,6 +1,6 @@
-#Skeleton Yii2
+# Skeleton Yii2
 
-##Build project with Docker
+## Build project with Docker
 
 ```
 docker-compose file v3.3
@@ -17,16 +17,16 @@ To start containers type:
 make up
 ```
 
-####Structure of docker project
+#### Structure of docker project
 All contaters configuration and relations handle in `docker-compose.yml`. Also project has **.docker** directory, which hold configuration data for containers (**config** directory), dockerfiles for containers ( **dockerfile** directory) and data from containers ( **data** directory )
 
 
-##Setup project
+## Setup project
 
-##Tests
+## Tests
 To run test 
 ```
 make tests
 ```
 
-##Code samples and usage
+## Code samples and usage
