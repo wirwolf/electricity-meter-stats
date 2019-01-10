@@ -17,7 +17,8 @@ $config = [
         '@npm'   => '@vendor/npm-asset',
     ],
     'bootstrap'           => [
-        'log'
+        'log',
+        \App\Modules\User\Bootstrap::class
     ],
     'components'          => require __DIR__ . '/components.php',
     'modules'             => require __DIR__ . '/modules.php',

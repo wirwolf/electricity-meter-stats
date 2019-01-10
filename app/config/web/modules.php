@@ -7,6 +7,9 @@
  */
 return [
     'user' => [
-        'class' => \SomeBlackMagic\Yii2User\Module::class,
+        'class' => \App\Modules\User\Module::class,
+        'controllerMap' => [
+            'security' => \App\Modules\User\Controllers\SecurityController::class
+        ],
     ],
 ];

@@ -1710,12 +1710,12 @@
             "source": {
                 "type": "git",
                 "url": "yii2-user",
-                "reference": "a0a0ba54f48bd711459036e46e08ba05b40ffa7f"
+                "reference": "bc2a49c4075cfb28856a5e056e485fe1b46c202e"
             },
             "require": {
                 "php": ">=7.1",
                 "yiisoft/yii2": "^2.0.13",
-                "yiisoft/yii2-authclient": "^2.1.0",
+                "yiisoft/yii2-authclient": "^2.0.0",
                 "yiisoft/yii2-bootstrap": "^2.0.0",
                 "yiisoft/yii2-swiftmailer": "^2.0.0"
             },
@@ -1726,9 +1726,8 @@
             },
             "type": "yii2-extension",
             "extra": {
-                "bootstrap": "SomeBlackMagic\\Yii2User\\Bootstrap",
                 "branch-alias": {
-                    "dev-master": "0.9.x-dev",
+                    "dev-master": "master",
                     "dev-develop": "1.0.x-dev"
                 }
             },
@@ -1755,7 +1754,7 @@
                 "yii2",
                 "yii2-user"
             ],
-            "time": "2019-01-09T18:03:54+00:00"
+            "time": "2019-01-10T12:18:41+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",

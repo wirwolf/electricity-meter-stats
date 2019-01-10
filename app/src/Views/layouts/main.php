@@ -6,12 +6,12 @@
 
 /* @var $this \yii\web\View */
 /* @var $content string */
+
+use App\Assets\AdminLtePluginAsset;
 use yii\helpers\Html;
-use yii\bootstrap\Nav;
-use yii\bootstrap\NavBar;
-use yii\widgets\Breadcrumbs;
 use App\Assets\AppAsset;
 AppAsset::register($this);
+AdminLtePluginAsset::register($this);
 $directoryAsset = Yii::$app->assetManager->getPublishedUrl('@vendor/almasaeed2010/adminlte/dist');
 ?>
 <?php $this->beginPage() ?>
@@ -21,26 +21,24 @@ $directoryAsset = Yii::$app->assetManager->getPublishedUrl('@vendor/almasaeed201
     <meta charset="<?= Yii::$app->charset ?>"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <?= Html::csrfMetaTags() ?>
-    <title><?= Html::encode($this->title) ?></title>
+    <title><?= Html::encode($this->title) ?> - <?= Html::encode(Yii::$app->name) ?></title>
+    <?php $this->registerCsrfMetaTags() ?>
     <?php $this->head() ?>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <?php $this->beginBody() ?>
 <div class="wrapper">
 
-    <?= $this->render(
-        'header.php',
-        ['directoryAsset' => $directoryAsset]
-    ) ?>
+    <?= $this->render('header', ['directoryAsset' => $directoryAsset]) ?>
 
     <?= $this->render(
-        'left.php',
+        'left',
         ['directoryAsset' => $directoryAsset]
     )
     ?>
 
     <?= $this->render(
-        'content.php',
+        'content',
         ['content' => $content, 'directoryAsset' => $directoryAsset]
     ) ?>
 

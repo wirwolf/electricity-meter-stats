@@ -128,5 +128,12 @@ return [
     ],
     
     'authManager' => require APP_ROOT . 'config/common/authManager.php',
-
+    /*'view' => [
+        'theme' => [
+            //'pathMap' => [
+                //'@vendor/someblackmagic/yii2-user/src/Views' => '@App/Modules/User/Views',
+                //'@App/Modules/User/Views' => '@vendor/someblackmagic/yii2-user/src/Views'
+            //]
+        ]
+    ]*/
 ];

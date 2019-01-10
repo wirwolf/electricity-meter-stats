@@ -19,6 +19,7 @@ services:
     build:
       context: .
       dockerfile: .docker/php/Dockerfile
+    restart: on-failure
     stop_signal: INT
     working_dir: '/var/www'
     depends_on:
