@@ -12,13 +12,4 @@ namespace App\Modules\User\Controllers;
 class SecurityController extends \SomeBlackMagic\Yii2User\Controllers\SecurityController
 {
     public $layout = 'login';
-
-    public function setLayout() {
-        var_dump('die');
-        die;
-    }
-
-    public function getLayout() {
-        return 'login';
-    }
 }

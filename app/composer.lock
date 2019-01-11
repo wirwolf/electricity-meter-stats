@@ -1710,7 +1710,7 @@
             "source": {
                 "type": "git",
                 "url": "yii2-user",
-                "reference": "bc2a49c4075cfb28856a5e056e485fe1b46c202e"
+                "reference": "521f47eb559ee3c5b8839b75f64d68f82b8e217c"
             },
             "require": {
                 "php": ">=7.1",
@@ -1727,8 +1727,7 @@
             "type": "yii2-extension",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "master",
-                    "dev-develop": "1.0.x-dev"
+                    "dev-master": "master"
                 }
             },
             "autoload": {
@@ -1754,7 +1753,7 @@
                 "yii2",
                 "yii2-user"
             ],
-            "time": "2019-01-10T12:18:41+00:00"
+            "time": "2019-01-11T11:06:49+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
