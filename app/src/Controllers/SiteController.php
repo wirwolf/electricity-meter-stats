@@ -27,11 +27,6 @@ class SiteController extends Controller
         ]);
     }
 
-    public function actionLogin(): string {
-        $this->layout = 'login';
-        return $this->render('login', [
-        ]);
-    }
 
     public function behaviors()
     {
@@ -69,5 +64,9 @@ class SiteController extends Controller
                     ]);
         }
         return $result;
+    }
+
+    public function actionOffline() {
+        echo 'system is not available';
     }
 }

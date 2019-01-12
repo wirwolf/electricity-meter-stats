@@ -10,7 +10,11 @@ return [
         'class' => \App\Modules\User\Module::class,
         'controllerMap' => [
             'security' => \App\Modules\User\Controllers\SecurityController::class,
-            'registration' => \App\Modules\User\Controllers\RegistrationController::class
+            'registration' => \App\Modules\User\Controllers\RegistrationController::class,
         ],
+        'modelMap' => [
+            'User' => \App\Modules\User\Models\User::class,
+            'RegistrationForm' => \App\Modules\User\Forms\RegistrationForm::class,
+        ]
     ],
 ];

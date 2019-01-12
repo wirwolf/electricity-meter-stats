@@ -17,4 +17,11 @@
 $this->title = $title;
 ?>
 
-<?= $this->render('/_alert', ['module' => $module]);
+<div class="lockscreen-wrapper">
+    <div class="lockscreen-logo">
+        <b><?= $title?></b>
+    </div>
+
+    <?= $this->render('/_alert', ['module' => $module]);?>
+
+</div>

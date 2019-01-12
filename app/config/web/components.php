@@ -77,9 +77,6 @@ return [
     ],
 
     'errorHandler' => [
-        //'class'             => \App\Components\ErrorHandler\Handler::class,
-        //'overwriteActive'   => true,
-        //'displayStacktrace' => true
         'errorAction' => 'site/error',
     ],
 

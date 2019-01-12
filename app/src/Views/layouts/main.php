@@ -1,54 +1,46 @@
 <?php
 /**
- * @author Andru Cherny
- * @date: 23.06.18 - 13:27
+ * Created by PhpStorm.
+ * User: wir_wolf
+ * Date: 12.01.19
+ * Time: 11:46
  */
 
+\dmstr\web\AdminLteAsset::register($this);
+\App\Assets\AdminLtePluginAsset::register($this);
+
+use yii\helpers\Html;
 /* @var $this \yii\web\View */
 /* @var $content string */
-
-use App\Assets\AdminLtePluginAsset;
-use yii\helpers\Html;
-use App\Assets\AppAsset;
-AppAsset::register($this);
-AdminLtePluginAsset::register($this);
+\dmstr\web\AdminLteAsset::register($this);
+\App\Assets\AdminLtePluginAsset::register($this);
 $directoryAsset = Yii::$app->assetManager->getPublishedUrl('@vendor/almasaeed2010/adminlte/dist');
 ?>
 <?php $this->beginPage() ?>
-<!DOCTYPE html>
-<html lang="<?= Yii::$app->language ?>">
-<head>
-    <meta charset="<?= Yii::$app->charset ?>"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <?= Html::csrfMetaTags() ?>
-    <title><?= Html::encode($this->title) ?> - <?= Html::encode(Yii::$app->name) ?></title>
-    <?php $this->registerCsrfMetaTags() ?>
-    <?php $this->head() ?>
-</head>
-<body class="hold-transition skin-blue sidebar-mini">
-<?php $this->beginBody() ?>
-<div class="wrapper">
+    <!DOCTYPE html>
+    <html lang="<?= Yii::$app->language ?>">
+    <head>
+        <meta charset="<?= Yii::$app->charset ?>"/>
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <title><?= Html::encode($this->title) ?> - <?= Html::encode(Yii::$app->name) ?></title>
+        <?php $this->registerCsrfMetaTags() ?>
+        <?php $this->head() ?>
+    </head>
+    <body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+        <?php $this->beginBody() ?>
 
-    <?= $this->render('header', ['directoryAsset' => $directoryAsset]) ?>
+        <?= $this->render('mainParts/main-header', ['directoryAsset' => $directoryAsset]) ?>
 
-    <?= $this->render(
-        'left',
-        ['directoryAsset' => $directoryAsset]
-    )
-    ?>
+        <?= $this->render('mainParts/main-sidebar', ['directoryAsset' => $directoryAsset]) ?>
+        <div class="content-wrapper">
+            <?= $content ?>
+        </div>
+        <?= $this->render('mainParts/main-footer', ['directoryAsset' => $directoryAsset]) ?>
 
-    <?= $this->render(
-        'content',
-        ['content' => $content, 'directoryAsset' => $directoryAsset]
-    ) ?>
-
-</div>
-<!-- Popup -->
-<!-- JS -->
-<!-- build:js js/all.min.js -->
-<?php $this->endBody() ?>
-<!-- endbuild -->
-</body>
-</html>
+        <?= $this->render('mainParts/control-sidebar', ['directoryAsset' => $directoryAsset]) ?>
+    </div>
+    <?php $this->endBody() ?>
+    </body>
+    </html>
 <?php $this->endPage() ?>
-

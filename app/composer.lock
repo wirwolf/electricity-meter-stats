@@ -1710,7 +1710,7 @@
             "source": {
                 "type": "git",
                 "url": "yii2-user",
-                "reference": "521f47eb559ee3c5b8839b75f64d68f82b8e217c"
+                "reference": "8ae8f8ac8d83a97f768f5502d93553779c21c1d8"
             },
             "require": {
                 "php": ">=7.1",
@@ -1720,6 +1720,7 @@
                 "yiisoft/yii2-swiftmailer": "^2.0.0"
             },
             "require-dev": {
+                "codeception/codeception": "^2.5",
                 "codeception/specify": "^0.4.3",
                 "codeception/verify": "^0.3.1",
                 "yiisoft/yii2-codeception": "^2.0.0"
@@ -1753,7 +1754,7 @@
                 "yii2",
                 "yii2-user"
             ],
-            "time": "2019-01-11T11:06:49+00:00"
+            "time": "2019-01-12T09:05:40+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
