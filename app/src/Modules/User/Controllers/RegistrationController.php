@@ -46,7 +46,7 @@ class RegistrationController extends \SomeBlackMagic\Yii2User\Controllers\Regist
         $this->trigger(self::EVENT_AFTER_CONFIRM, $event);
 
         if($status === true ) {
-            \Yii::$app->response->redirect('/main');
+            \Yii::$app->response->redirect('/main/index');
         } else {
             return $this->render('/message', [
                 'title'  => \Yii::t('user', 'Account confirmation'),

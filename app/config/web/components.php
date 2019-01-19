@@ -97,12 +97,12 @@ return [
         'loginUrl' => ['user/login']
     ],
     'i18n'       => [
-        'translations' => [
-            '*' => [
-                'class' => \yii\i18n\DbMessageSource::class,
-                'db'    => 'db'
-            ],
-        ],
+//        'translations' => [
+//            '*' => [
+//                'class' => \yii\i18n\DbMessageSource::class,
+//                'db'    => 'db'
+//            ],
+//        ],
     ],
     'reCaptcha'  => [
         'name'    => 'reCaptcha',

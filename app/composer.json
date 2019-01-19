@@ -25,7 +25,7 @@
 		"mito/yii2-sentry": "~1.0.0",
 		"lajax/yii2-translate-manager": "^1.7",
 		"boundstate/yii2-mailgun": "^0.0",
-		"someblackmagic/yii2-user": "dev-master",
+		"someblackmagic/yii2-user": "0.9.16",
 		"dmstr/yii2-adminlte-asset": "^2.1"
 	},
 	"require-dev": {
@@ -69,10 +69,6 @@
 		}
 	},
 	"repositories": [
-		{
-			"type": "vcs",
-			"url": "yii2-user"
-		},
 		{
 			"type": "composer",
 			"url": "https://asset-packagist.org"

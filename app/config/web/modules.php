@@ -11,6 +11,7 @@ return [
         'controllerMap' => [
             'security' => \App\Modules\User\Controllers\SecurityController::class,
             'registration' => \App\Modules\User\Controllers\RegistrationController::class,
+            'recovery' => \App\Modules\User\Controllers\RecoveryController::class
         ],
         'modelMap' => [
             'User' => \App\Modules\User\Models\User::class,

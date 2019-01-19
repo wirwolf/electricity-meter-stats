@@ -26,11 +26,11 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <div class="register-box">
     <div class="register-logo">
-        <?= Html::encode($this->title) ?> <b>Admin</b>
+        <?= Html::encode($this->title) ?>
     </div>
 
     <div class="register-box-body">
-        <p class="login-box-msg">Register a new membership</p>
+        <p class="login-box-msg"><?= Yii::t('user', 'Register a new membership')?></p>
 
         <?php $form = ActiveForm::begin([
             'id' => 'login-form',
@@ -100,7 +100,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 </div-->
                 <!-- /.col -->
                 <div class="col-xs-12">
-                    <?= Html::submitButton(Yii::t('user', 'Register'), ['class' => 'btn btn-primary btn-block btn-flat']) ?>
+                    <?= Html::submitButton(Yii::t('user', 'Sign up'), ['class' => 'btn btn-primary btn-block btn-flat']) ?>
                 </div>
                 <!-- /.col -->
             </div>

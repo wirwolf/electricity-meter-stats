@@ -29,11 +29,11 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <div class="login-box">
     <div class="login-logo">
-        <?= Html::encode($this->title) ?> <b>Admin</b>
+        <?= Html::encode($this->title) ?>
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
-        <p class="login-box-msg">Sign in to start your session</p>
+        <p class="login-box-msg"><?=Yii::t('user', 'Sign in to start your session')?></p>
 
         <?php $form = ActiveForm::begin([
             'id' => 'login-form',
@@ -85,11 +85,11 @@ $this->params['breadcrumbs'][] = $this->title;
                  ?>
         <?php endif ?>
             <div class="row">
-                <div class="col-xs-8">
+                <div class="col-xs-6">
                     <?= $form->field($model, 'rememberMe')->checkbox(['tabindex' => '3']) ?>
                 </div>
                 <!-- /.col -->
-                <div class="col-xs-4">
+                <div class="col-xs-6">
                     <?= Html::submitButton(
                         Yii::t('user', 'Sign in'),
                         ['class' => 'btn btn-primary btn-block', 'tabindex' => '4']
@@ -104,12 +104,12 @@ $this->params['breadcrumbs'][] = $this->title;
             <?= Connect::widget([
                 'baseAuthUrl' => ['/user/security/auth'],
             ]) ?>
-            <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google-plus"></i> Sign in using Google(todo)</a>
+            <a href="#" class="btn btn-block btn-social btn-google btn-flat"><i class="fa fa-google"></i> <?=Yii::t('user', 'Sign in using Google')?>(todo)</a>
         </div>
         <!-- /.social-auth-links -->
 
 
-        <?= Html::a(Yii::t('user', 'I forgot my password'), ['/user/recovery/request'], ['class'=>'text-center']) ?><br>
+        <?= Html::a(Yii::t('user', 'Forgot password?'), ['/user/recovery/request'], ['class'=>'text-center']) ?><br>
         <?php if ($module->enableRegistration): ?>
             <?= Html::a(Yii::t('user', 'Don\'t have an account? Sign up!'), ['/user/registration/register'], ['class'=>'text-center']) ?><br>
         <?php endif ?>
