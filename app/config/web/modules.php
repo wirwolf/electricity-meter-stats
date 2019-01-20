@@ -18,4 +18,5 @@ return [
             'RegistrationForm' => \App\Modules\User\Forms\RegistrationForm::class,
         ]
     ],
+    'main' => \App\Modules\Main\Module::class
 ];

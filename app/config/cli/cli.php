@@ -25,7 +25,7 @@ $config = [
     'controllerMap'       => [
         'migrate' => [
             'class'         => \yii\console\controllers\MigrateController::class,
-            'migrationPath' => [APP_ROOT.'migrations/mysql', '@vendor/someblackmagic/yii2-user/src/Migrations', ],
+            'migrationPath' => [APP_ROOT.'migrations/mysql', '@SomeBlackMagic/Yii2User/src/Migrations', ''],
         ]
     ],
 ];

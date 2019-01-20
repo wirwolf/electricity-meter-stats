@@ -33,9 +33,9 @@ $directoryAsset = Yii::$app->assetManager->getPublishedUrl('@vendor/almasaeed201
         <?= $this->render('mainParts/main-header', ['directoryAsset' => $directoryAsset]) ?>
 
         <?= $this->render('mainParts/main-sidebar', ['directoryAsset' => $directoryAsset]) ?>
-        <div class="content-wrapper">
-            <?= $content ?>
-        </div>
+
+        <?= $this->render('mainParts/content-wrapper', ['directoryAsset' => $directoryAsset, 'content' => $content]) ?>
+
         <?= $this->render('mainParts/main-footer', ['directoryAsset' => $directoryAsset]) ?>
 
         <?= $this->render('mainParts/control-sidebar', ['directoryAsset' => $directoryAsset]) ?>

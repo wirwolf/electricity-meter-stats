@@ -1,11 +1,29 @@
 <?php
 
 ?>
-<div class="middle-box text-center animated fadeInDown">
-    <h1>404</h1>
-    <h3 class="font-bold">Page Not Found</h3>
+<section class="content">
+    <div class="error-page">
+        <h2 class="headline text-yellow">404</h2>
 
-    <div class="error-desc">
-        Sorry, but the page you are looking for has note been found. Try checking the URL for error, then hit the refresh button on your browser or try found something else in our app.
+        <div class="error-content">
+            <h3><i class="fa fa-warning text-yellow"></i> Oops! Page not found.</h3>
+
+            <p>We could not find the page you were looking for.</p>
+
+            <!--form class="search-form">
+                <div class="input-group">
+                    <input type="text" name="search" class="form-control" placeholder="Search">
+
+                    <div class="input-group-btn">
+                        <button type="submit" name="submit" class="btn btn-warning btn-flat"><i
+                                    class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </form-->
+        </div>
+        <!-- /.error-content -->
     </div>
-</div>
+    <!-- /.error-page -->
+</section>

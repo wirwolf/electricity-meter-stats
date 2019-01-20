@@ -139,6 +139,7 @@ return array (
   'Roles' => 'Роли',
   'Rules' => 'Правила',
   'Save' => 'Сохранить',
+  'Sign out' => 'Выход',
   'Sign in to start your session' => 'Авторизуйтесь, для начала работы',
   'Sign in' => 'Авторизоваться',
   'Sign in using Google' => 'Авторизация через Google',

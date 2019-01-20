@@ -6,10 +6,8 @@ declare(strict_types=1);
 namespace App\Controllers;
 
 use App\Helpers\Arr;
-use App\Models\Referral;
 use Yii;
-use yii\db\Expression;
-use yii\web\{Controller, ServerErrorHttpException};
+use yii\web\Controller;
 
 /**
  * Class SiteController
@@ -51,11 +49,9 @@ class SiteController extends Controller
             case 404:
                 $result = $this->render('404');
             break;
-            case 500:
-                $result = $this->render('500',['message' => $exception->getMessage()]);
-            break;
             case 403:
-                $result = $this->render('500',['message' => $exception->getMessage()]);
+            case 500:
+                $result = $this->render('500',['message' => $exception->getMessage(), 'code' => $exception->statusCode]);
             break;
             default:
                 $result = $this->render('500',
@@ -66,7 +62,10 @@ class SiteController extends Controller
         return $result;
     }
 
-    public function actionOffline() {
+    /**
+     *
+     */
+    public function actionOffline(): void {
         echo 'system is not available';
     }
 }

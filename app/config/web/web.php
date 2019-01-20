@@ -1,5 +1,6 @@
 <?php
 
+use yii\gii\generators\model\Generator;
 use App\Helpers\Env;
 
 $config = [
@@ -34,7 +35,7 @@ if (Env::get('APP_GII_ENABLED', true)) {
         'allowedIPs' => explode(',', Env::get('APP_GII_IPS', '127.0.0.1,::1,*')),
         'generators' => [
             'model' => [
-                'class'     => 'yii\gii\generators\model\Generator',
+                'class'     => Generator::class,
                 'queryNs'   => 'App\Modules\Database',
                 'ns'        => 'App\Modules\Database',
                 //'baseClass' => App\Components\BaseModel::class

@@ -27,7 +27,7 @@ return [
         'environment' => YII_ENV.'_web', // if not set, the default is `production`
         'enabled' => YII_ENV_DEV ? false : true
     ],
-    
+
 
     'mysqlRedisCache' => yii\redis\Cache::class,
 
@@ -97,12 +97,12 @@ return [
         'loginUrl' => ['user/login']
     ],
     'i18n'       => [
-//        'translations' => [
-//            '*' => [
-//                'class' => \yii\i18n\DbMessageSource::class,
-//                'db'    => 'db'
-//            ],
-//        ],
+        'translations' => [
+            'main*' => [
+                'class' => \yii\i18n\PhpMessageSource::class,
+                'basePath'    => '@App/Messages'
+            ],
+        ],
     ],
     'reCaptcha'  => [
         'name'    => 'reCaptcha',
@@ -124,7 +124,7 @@ return [
         'baseUrl' => '@web' . Env::get('APP_BASE_URL', '/') . 'assets',
     ],
     
-    'authManager' => require APP_ROOT . 'config/common/authManager.php',
+    //'authManager' => require APP_ROOT . 'config/common/authManager.php',
     /*'view' => [
         'theme' => [
             //'pathMap' => [
